@@ -15,19 +15,20 @@ public class RemoveElement {
     public static void main(String[] args) {
 
         System.out.println(array.length);
-        System.out.println(removeSuchValue(4));
+        System.out.println(removeSuchValues_optimized(4));
         SedUtil.print(array);
 
     }
 
 
     /**
-     * 1. 定义两个游标i和j，i用来遍历数组，j所有元素前移1位（当数组中出现符合条件的元素时）
+     * 1. 定义两个游标i和j，i用来遍历数组，当数组中出现符合条件的元素时，j所有元素前移1位
      * 2. 出现两个连续符合条件元素，需要i--，否则正常for循环逻辑会跳过连续元素中的第二个（由于前提一位）
+     *
      * @param element 需要移除的元素
      * @return
      */
-    static int removeSuchValue(int element) {
+    static int removeSuchValues(int element) {
 
         int i = 0, j, sum = array.length;
 
@@ -54,4 +55,29 @@ public class RemoveElement {
 
         return sum;
     }
+
+    /**
+     * 1. 建立两个游标i和j，双线程处理这个数组（in place），遍历当前数组按顺序查找值为element的数组的下标，同时递增i和j；
+     * 2. 当i等于element的时候，i继续递增，j不变（保持j等于当前element的下标）
+     * 3. 当下一个i不等于element的时候，j的位置，替换为当前不等于element的下标i所指的值。
+     * @param element
+     * @return
+     */
+    static int removeSuchValues_optimized(int element) {
+
+        int i = 0, j = 0;
+
+        for (; i < array.length; i++) {
+
+            if (array[i] == element) {
+                continue;
+            }
+
+            array[j]=array[i];
+            j++;
+        }
+
+        return j;
+    }
+
 }
