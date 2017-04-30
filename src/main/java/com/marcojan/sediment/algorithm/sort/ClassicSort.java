@@ -1,6 +1,6 @@
 package com.marcojan.sediment.algorithm.sort;
 
-import com.marcojan.sediment.common.SedUtil;
+import com.marcojan.sediment.algorithm.util.SedUtil;
 
 /**
  * Created by Marco on 10/04/2017.

@@ -1,9 +1,9 @@
-package com.marcojan.sediment.algorithm.util;
+package com.marcojan.sediment.interview;
 
 /**
  * Created by Marco on 21/04/2017.
  */
-public class DateUtil {
+public class LeapYear {
 
     private static int[] daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 

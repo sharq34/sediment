@@ -1,4 +1,4 @@
-package com.marcojan.sediment.common;
+package com.marcojan.sediment.algorithm.util;
 
 /**
  * Created by Marco on 12/04/2017.

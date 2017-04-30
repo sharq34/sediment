@@ -1,6 +1,6 @@
 package com.marcojan.sediment.algorithm.leetcode;
 
-import com.marcojan.sediment.common.SedUtil;
+import com.marcojan.sediment.algorithm.util.SedUtil;
 
 /**
  * Given a sorted array, remove the duplicates in place such that > each element appear only once and return the new length.
