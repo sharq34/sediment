@@ -1,4 +1,4 @@
-package com.marcojan.sediment.thread.concurrent;
+package com.marcojan.sediment.concurrent.collection;
 
 /**
  * @attention

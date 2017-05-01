@@ -1,4 +1,6 @@
-package com.marcojan.sediment.thread.concurrent;
+package com.marcojan.sediment.concurrent.collection;
+
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Created by Marco on 30/04/2017.
@@ -26,6 +28,9 @@ public class CopyOnWrite {
      */
     public static void main(String[] args) {
 
+        CopyOnWriteArrayList<String> copyOnWriteArrayList= new CopyOnWriteArrayList<String>();
+
+        //copyOnWriteArrayList.stream().
     }
 
 }

@@ -1,4 +1,4 @@
-package com.marcojan.sediment.thread;
+package com.marcojan.sediment.concurrent;
 
 import java.util.ArrayList;
 import java.util.List;

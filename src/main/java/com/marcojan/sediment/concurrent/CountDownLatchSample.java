@@ -1,10 +1,18 @@
-package com.marcojan.sediment.thread;
+package com.marcojan.sediment.concurrent;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
+ * new CountDownLatch(n): 表示等待n个初始化任务
+ * countDownLatch.await(): 让当前线程阻塞
+ * countDownLatch.countDown() * n: 执行N次以后notify之前await的countDownLatch
+ *
+ * 可以替换 wait& notify
+ *
+ * 相关应用：zookeeper
+ *
  * Created by Marco on 30/04/2017.
  */
 public class CountDownLatchSample {
