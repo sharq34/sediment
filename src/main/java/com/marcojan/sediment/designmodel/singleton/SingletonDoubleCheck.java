@@ -5,7 +5,7 @@ package com.marcojan.sediment.designmodel.singleton;
  */
 public class SingletonDoubleCheck {
 
-    private static SingletonDoubleCheck sdc;
+    private volatile static SingletonDoubleCheck sdc;
 
     private SingletonDoubleCheck() {
     }
