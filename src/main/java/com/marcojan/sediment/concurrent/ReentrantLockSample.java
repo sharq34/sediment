@@ -16,6 +16,12 @@ import static java.lang.Thread.sleep;
  * 1. 效率上，synchronized和ReentrantLock没有区别
  * 2. 使用上，ReentrantLock的使用更加灵活
  *
+ * DIFF:
+ *
+ * 1. ReentrantLock 可以为公平锁和非公平锁，synchronized 只能费公平锁
+ * 2. ReentrantLock 可以使用lockInterruptibly 打断锁，而 synchronized 只能一直等待
+ * 3. 可以有多个 Condition 条件
+ *
  * Created by Marco on 01/05/2017.
  */
 public class ReentrantLockSample {
