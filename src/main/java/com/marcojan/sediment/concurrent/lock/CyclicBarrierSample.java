@@ -1,4 +1,4 @@
-package com.marcojan.sediment.concurrent;
+package com.marcojan.sediment.concurrent.lock;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

@@ -1,4 +1,4 @@
-package com.marcojan.sediment.concurrent;
+package com.marcojan.sediment.concurrent.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;

@@ -1,4 +1,4 @@
-package com.marcojan.sediment.concurrent.completablefuture;
+package com.marcojan.sediment.concurrent.thread;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;

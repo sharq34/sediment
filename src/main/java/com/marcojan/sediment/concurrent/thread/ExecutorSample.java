@@ -1,4 +1,4 @@
-package com.marcojan.sediment.concurrent;
+package com.marcojan.sediment.concurrent.thread;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
