@@ -1,4 +1,4 @@
-package com.marcojan.sediment.algorithm;
+package com.marcojan.sediment.algorithm.interview;
 
 /**
  * 二分查找法

@@ -1,7 +1,5 @@
 package com.marcojan.sediment.algorithm.sort;
 
-import com.marcojan.sediment.algorithm.util.SedUtil;
-
 /**
  * Created by Marco on 10/04/2017.
  */
@@ -32,7 +30,7 @@ public class ClassicSort {
             }
         }
 
-        SedUtil.print(unsorted);
+        print(unsorted);
     }
 
     public void selectedSort() {
@@ -46,7 +44,7 @@ public class ClassicSort {
             }
         }
 
-        SedUtil.print(unsorted);
+        print(unsorted);
     }
 
     public void quickSort(int beg, int end, int[] unsorted) {
@@ -104,8 +102,14 @@ public class ClassicSort {
             }
         }
 
-        SedUtil.print(unsorted);
+        print(unsorted);
 
+    }
+
+    private void print(int[] array){
+        for(int val:array){
+            System.out.print(val+", ");
+        }
     }
 
     private void swap(int index1, int index2) {
