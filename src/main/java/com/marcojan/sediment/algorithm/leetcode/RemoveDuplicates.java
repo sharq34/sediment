@@ -1,5 +1,9 @@
 package com.marcojan.sediment.algorithm.leetcode;
 
+import com.google.common.collect.Maps;
+
+import java.util.HashMap;
+
 /**
  * Given a sorted array, remove the duplicates in place such that > each element appear only once and return the new length.
  * Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -14,9 +18,10 @@ public class RemoveDuplicates {
     static int[] array = {1, 1, 1, 1, 3, 3, 4, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 11, 12, 13};
 
     public static void main(String[] args) {
-        System.out.println(array.length);
-        System.out.println(removeDuplicatesAtMost2());
-        SedUtil.print(array);
+//        System.out.println(array.length);
+//        System.out.println(removeDuplicatesAtMost2());
+        keepUnique();
+        System.out.println(array);
     }
 
 
@@ -79,5 +84,32 @@ public class RemoveDuplicates {
         }
 
         return j + 1;
+    }
+
+    // remove duplicates 20230425
+    static void keepUnique() {
+
+        for (int i = 0; i < array.length; i++) {
+            int std = array[i];
+            // the end todo
+            if (i == array.length - 1) break;
+            int offset = 0;
+            for (int j = i + 1; j < array.length; j++) {
+                int tar = array[j];
+                if (std == tar) {
+                    offset++;
+                } else {
+                    break;
+                }
+            }
+            if (offset != 0)
+                rebuild(i, offset);
+        }
+    }
+
+    static void rebuild(int idx, int offset) {
+        for (int i = idx + 1; i < array.length; i++) {
+            array[i] = array[i + offset];
+        }
     }
 }

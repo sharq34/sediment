@@ -14,7 +14,7 @@ public class RemoveElement {
 
         System.out.println(array.length);
         System.out.println(removeSuchValues_optimized(4));
-        SedUtil.print(array);
+//        SedUtil.print(array);
 
     }
 
