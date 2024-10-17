@@ -8,12 +8,13 @@ package com.marcojan.sediment.algorithm.leetcode;
  */
 public class RemoveElement {
 
-    static int[] array = {2, 3, 7, 6, 5, 4, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    //    static int[] array = {2, 3, 7, 6, 5, 4, 4, 5, 6, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    static int[] array = {4, 4, 0, 1, 0, 2};
 
     public static void main(String[] args) {
 
         System.out.println(array.length);
-        System.out.println(removeSuchValues_optimized(4));
+        System.out.println(removeElement(array, 0));
 //        SedUtil.print(array);
 
     }
@@ -58,6 +59,7 @@ public class RemoveElement {
      * 1. 建立两个游标i和j，双线程处理这个数组（in place），遍历当前数组按顺序查找值为element的数组的下标，同时递增i和j；
      * 2. 当i等于element的时候，i继续递增，j不变（保持j等于当前element的下标）
      * 3. 当下一个i不等于element的时候，j的位置，替换为当前不等于element的下标i所指的值。
+     *
      * @param element
      * @return
      */
@@ -71,11 +73,38 @@ public class RemoveElement {
                 continue;
             }
 
-            array[j]=array[i];
+            array[j] = array[i];
             j++;
         }
 
         return j;
     }
 
+
+    // 1
+    public static int removeElement(int[] nums, int val) {
+        int count = 0;
+        for (int i = 0; i < nums.length; ) {
+            if (nums[i] == val) {
+                backward(nums, i);
+                count++;
+                continue;
+            }
+            i++;
+        }
+        return nums.length - count;
+    }
+
+    static void backward(int[] nums, int index) {
+        for (int i = index; i < nums.length; i++) {
+
+            if (i == nums.length - 1) {
+                nums[i] = -99;
+                return;
+            }
+
+            nums[i] = nums[i + 1];
+            nums[i + 1] = -99;
+        }
+    }
 }

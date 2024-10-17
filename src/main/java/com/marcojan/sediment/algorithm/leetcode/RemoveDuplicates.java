@@ -15,12 +15,12 @@ import java.util.HashMap;
  */
 public class RemoveDuplicates {
 
-    static int[] array = {1, 1, 1, 1, 3, 3, 4, 4, 5, 6, 7, 8, 9, 10, 10, 11, 11, 11, 12, 13};
+    static int[] array = {1, 1, 1, 1, 3, 3, 4, 4, 11};
 
     public static void main(String[] args) {
 //        System.out.println(array.length);
 //        System.out.println(removeDuplicatesAtMost2());
-        keepUnique();
+        removeDuplicates240105(array);
         System.out.println(array);
     }
 
@@ -111,5 +111,34 @@ public class RemoveDuplicates {
         for (int i = idx + 1; i < array.length; i++) {
             array[i] = array[i + offset];
         }
+    }
+
+    static int removeDuplicates240105(int[] nums) {
+
+        int refer = nums[0];
+        int count = 0;
+
+        for (int i = 1; i < nums.length; ) {
+
+            if (refer == -1) break;
+
+            if (nums[i] == refer) {
+                for (int k = i; k < nums.length; k++) {
+
+                    if (k == nums.length - 1) {
+                        nums[k] = -1;
+                        break;
+                    }
+
+                    nums[k] = nums[k + 1];
+                    nums[k + 1] = -1;
+                }
+                count++;
+                continue;
+            }
+            refer = nums[i];
+            i++;
+        }
+        return nums.length - count;
     }
 }
